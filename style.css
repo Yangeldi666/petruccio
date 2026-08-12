@@ -119,17 +119,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-  .frame{
-    max-width:70%;
-    margin-left: auto;
-    margin-right: auto;
-    background:var(--paper);
-    border:1px solid var(--line);
-    padding:14px;
-    box-shadow:0 24px 60px -20px rgba(43,40,30,.35);
-    transform:rotate(-.6deg);
   }
+
+    .frame {
+        width: 60%;
+        margin: 0 auto;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        padding: 14px;
+        box-shadow: 0 24px 60px -20px rgba(43,40,30,.35);
+        transform: rotate(-.6deg);
+    }
+
+.frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
   .frame figcaption{
     font-family:'Inter',sans-serif;font-size:.68rem;color:var(--forest);
     text-align:center;padding-top:10px;letter-spacing:.03em;
