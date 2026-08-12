@@ -129,7 +129,6 @@
         border: 1px solid var(--line);
         padding: 14px;
         box-shadow: 0 24px 60px -20px rgba(43,40,30,.35);
-        transform: none;
     }
 
 .frame img {
