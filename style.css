@@ -115,11 +115,15 @@
   .btn-ghost{border:1px solid var(--ink);color:var(--ink);}
   .btn-ghost:hover{transform:translateY(-2px);background:var(--ink);color:var(--paper);}
 
-  .hero-illustration{
-    margin-top:64px;position:relative;
-  }
+  .hero-illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
   .frame{
-    max-width:70%;margin:0 auto;
+    max-width:70%;
+    margin-left: auto;
+    margin-right: auto;
     background:var(--paper);
     border:1px solid var(--line);
     padding:14px;
