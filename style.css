@@ -184,7 +184,7 @@
   .sobre-art{ /* caixa que contém o SVG desenhado à mão (moldura + círculos + "garimpo") */
     aspect-ratio:1/1.05;position:relative;
   }
-  .sobre-art svg{width:100%;height:100%;}
+  .sobre-art svg{width:50%;height:50%;}
 
   /* ============================================================
      CARDÁPIO — seção com abas e as listas de itens/preços
