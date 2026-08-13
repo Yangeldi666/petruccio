@@ -313,7 +313,9 @@ nav{
   justify-content:center;
   align-items:center;
   width:100%;
-  margin-top: 80px;
+
+  padding-top:100px;
+  margin-top:0;
 }
 
 .frame{
@@ -323,7 +325,6 @@ nav{
   margin:0 auto;
 
   background:var(--paper);
-
   border:1px solid var(--line);
 
   padding:14px;
@@ -337,11 +338,9 @@ nav{
 
 .frame img{
   display:block;
-
   width:100%;
   max-width:100%;
   height:auto;
-
   object-fit:contain;
 }
 
