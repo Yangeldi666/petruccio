@@ -4,38 +4,59 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Petruccio — Boteco Arte</title>
+
+<!-- Conexão antecipada com o Google Fonts (deixa o carregamento das fontes mais rápido) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://gstatic.com" crossorigin>
+<!-- Importa as 4 fontes usadas no site: Alex Brush, Fraunces (títulos), Lora (texto corrido) e Inter (menus/botões/rótulos) -->
 <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Todo o visual (cores, espaçamentos, layout) vem daqui -->
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- Camada de fundo com manchas suaves (efeito "aquarela") atrás de tudo.
+     Estilizada em style.css na classe .watermark -->
 <div class="watermark"></div>
 
+<!-- ============================================================
+     CABEÇALHO / MENU DE NAVEGAÇÃO
+     Fica fixo no topo da página (style.css: header{position:sticky...})
+     ============================================================ -->
 <header>
   <nav>
     <a href="#" class="brand">Petruccio</a>
     <div class="navlinks">
+      <!-- Links internos: rolam a página até a seção com o id correspondente -->
       <a href="#sobre">Sobre</a>
       <a href="#cardapio">Cardápio</a>
       <a href="#local">Localização</a>
+      <!-- Botão de destaque (estilo .cta em style.css) que abre o Instagram em nova aba -->
       <a href="https://www.instagram.com/petruccio_boteco_art" target="_blank" class="cta">Reservar</a>
     </div>
   </nav>
 </header>
 
+<!-- ============================================================
+     HERO — primeira seção grande, com título, frase e imagem
+     Estilos em style.css na área "/* ---------- HERO ---------- */"
+     ============================================================ -->
 <section class="hero">
   <span class="eyebrow">Boteco arte · Tiradentes — MG</span>
   <h1>Petruccio</h1>
   <p class="tagline">Onde o tempo se dissolve entre sabores e sorrisos.</p>
-  <div class="rule"></div>
+  <div class="rule"></div> <!-- linha decorativa com bolinhas nas pontas (.rule em style.css) -->
+
   <div class="hero-ctas">
+    <!-- Botão principal cheio, leva para a seção de cardápio -->
     <a href="#cardapio" class="btn btn-primary">Ver cardápio</a>
+    <!-- Botões "fantasma" (apenas contorno), levam aos Instagrams -->
     <a href="https://www.instagram.com/petruccio_boteco_art" target="_blank" class="btn btn-ghost">Petruccio no Instagram</a>
     <a href="https://www.instagram.com/casacatarinatiradentes?igsh=dmlvbWVoaDlpa2Y3" target="_blank" class="btn btn-ghost">Casa Catarina no Instagram</a>
   </div>
 
+  <!-- Moldura com a imagem da aquarela (arquivo em imagens/aquarela.jpg) -->
   <div class="hero-illustration">
     <figure class="frame">
        <img src="imagens/aquarela.jpg">
@@ -44,9 +65,14 @@
   </div>
 </section>
 
+<!-- ============================================================
+     SOBRE — texto institucional + ilustração SVG decorativa
+     id="sobre" é o alvo do link "Sobre" do menu
+     Estilos em style.css na área "/* ---------- SOBRE ---------- */"
+     ============================================================ -->
 <section class="sobre" id="sobre">
-  <div class="wrap">
-    <div class="sobre-grid">
+  <div class="wrap"> <!-- .wrap limita a largura máxima do conteúdo (max-width:1160px) -->
+    <div class="sobre-grid"> <!-- grid de 2 colunas: texto | ilustração -->
       <div>
         <span class="eyebrow">Sobre a casa</span>
         <h2>Feito de gente, memória e afeto.</h2>
@@ -55,6 +81,7 @@
         <p>As coleções, a arte, os objetos, as garrafas, todos contam fragmentos da nossa jornada. E tudo isso se mistura à comida, ao som do copo sendo pousado na mesa, ao cheiro que vem da cozinha.</p>
         <p class="assinatura">Petruccio não é só um lugar. É um sentimento e quem senta à nossa mesa passa a fazer parte dele também.</p>
       </div>
+      <!-- Ilustração SVG desenhada na mão (moldura + círculos + retângulo tracejado + texto "garimpo") -->
       <div class="sobre-art">
         <svg viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg">
           <rect x="6" y="6" width="388" height="408" fill="none" stroke="#B08D4F" stroke-width="1"/>
@@ -69,6 +96,12 @@
   </div>
 </section>
 
+<!-- ============================================================
+     CARDÁPIO — seção com abas (Para começar / Para comer / Para beber / Drinks)
+     id="cardapio" é o alvo do link "Cardápio" do menu.
+     A troca de abas é feita pelo script.js (veja comentários lá).
+     Estilos em style.css na área "/* ---------- CARDAPIO ---------- */"
+     ============================================================ -->
 <section class="cardapio" id="cardapio">
   <div class="wrap">
     <div class="section-head">
@@ -77,6 +110,10 @@
       <div class="rule-left"></div>
     </div>
 
+    <!-- BOTÕES DAS ABAS
+         "data-panel" liga cada botão ao painel de mesmo id lá embaixo.
+         A classe "active" (já presente no primeiro botão) define a aba
+         que aparece selecionada quando a página carrega. -->
     <div class="tabs">
       <button class="tab active" data-panel="comecar">Para começar</button>
       <button class="tab" data-panel="comer">Para comer</button>
@@ -84,8 +121,10 @@
       <button class="tab" data-panel="drinks">Drinks</button>
     </div>
 
+    <!-- PAINEL: "Para começar" (entradas/petiscos)
+         Fica visível por padrão porque já nasce com a classe "active" -->
     <div class="menu-panel active" id="comecar">
-      <div class="menu-cols">
+      <div class="menu-cols"> <!-- grid de 2 colunas de itens -->
         <div>
           <div class="menu-item-wrap"><div class="menu-row"><span class="name">Pastel Paulista</span><span class="leader"></span><span class="price">R$ 48</span></div><span class="desc">8 un. · queijo, carne e pizza</span></div>
           <div class="menu-item-wrap"><div class="menu-row"><span class="name">Moela gratinada</span><span class="leader"></span><span class="price">R$ 55</span></div><span class="desc">com queijo canastra · acompanha cesta de pães</span></div>
@@ -104,6 +143,8 @@
       </div>
     </div>
 
+    <!-- PAINEL: "Para comer" (pratos principais)
+         Sem "active" no HTML: fica escondido até o usuário clicar na aba "Para comer" -->
     <div class="menu-panel" id="comer">
       <div class="menu-cols">
         <div>
@@ -123,6 +164,7 @@
       </div>
     </div>
 
+    <!-- PAINEL: "Para beber" (não alcoólicos + drinks clássicos) -->
     <div class="menu-panel" id="beber">
       <div class="menu-cols">
         <div>
@@ -141,6 +183,7 @@
       </div>
     </div>
 
+    <!-- PAINEL: "Drinks" (coquetéis) -->
     <div class="menu-panel" id="drinks">
       <div class="menu-cols">
         <div>
@@ -161,14 +204,20 @@
   </div>
 </section>
 
+<!-- ============================================================
+     GARIMPO — 3 cartões falando da decoração/objetos da casa
+     Fundo escuro (--forest-dark), estilos em style.css na área
+     "/* ---------- GARIMPO ---------- */"
+     ============================================================ -->
 <section class="garimpo">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Garimpo</span>
       <h2>Cada objeto, uma lembrança</h2>
+      <!-- style inline aqui só troca a cor da linha decorativa para dourado (--brass) -->
       <div class="rule-left" style="background:var(--brass)"></div>
     </div>
-    <div class="garimpo-grid">
+    <div class="garimpo-grid"> <!-- grid de 3 colunas (vira 1 coluna no celular) -->
       <div class="garimpo-card">
         <span class="num">Cadeiras & quadros</span>
         <h3>Móveis com passado</h3>
@@ -188,6 +237,11 @@
   </div>
 </section>
 
+<!-- ============================================================
+     LOCALIZAÇÃO — endereço, horário, contato + mapa ilustrado em SVG
+     id="local" é o alvo do link "Localização" do menu
+     Estilos em style.css na área "/* ---------- LOCALIZACAO ---------- */"
+     ============================================================ -->
 <section class="local" id="local">
   <div class="wrap">
     <div class="section-head">
@@ -195,13 +249,16 @@
       <h2>Meio escondido, meio achado</h2>
       <div class="rule-left"></div>
     </div>
-    <div class="local-grid">
+    <div class="local-grid"> <!-- grid de 2 colunas: infos | mapa -->
       <div>
+        <!-- Cada .info-row é uma linha "rótulo: valor" (endereço, como chegar, horário, contato) -->
         <div class="info-row"><span class="k">Endereço</span><span class="v">Estrada do Elvas, km 3 — Apolinário, Tiradentes, MG</span></div>
         <div class="info-row"><span class="k">Como chegar</span><span class="v">A poucos minutos do centro de Tiradentes, entrando na mata.</span></div>
         <div class="info-row"><span class="k">Horário</span><span class="v">Consulte disponibilidade e reservas pelo Instagram.</span></div>
         <div class="info-row"><span class="k">Contato</span><span class="v"><a href="https://www.instagram.com/petruccio_boteco_art" target="_blank" style="color:var(--rust);text-decoration:none;">@petruccio_boteco_art</a></span></div>
       </div>
+      <!-- Mapa ilustrativo desenhado em SVG (não é um mapa real/interativo,
+           é um desenho estilizado com um "pino" marcando o Petruccio) -->
       <div class="map-box">
         <svg viewBox="0 0 400 340" xmlns="http://www.w3.org/2000/svg">
           <rect width="400" height="340" fill="#F6F1E4"/>
@@ -217,6 +274,10 @@
   </div>
 </section>
 
+<!-- ============================================================
+     RODAPÉ — repete marca, tagline, links e crédito final
+     Estilos em style.css na área "/* ---------- FOOTER ---------- */"
+     ============================================================ -->
 <footer>
   <div class="foot-wrap">
     <span class="brand">Petruccio</span>
@@ -231,6 +292,8 @@
   </div>
 </footer>
 
+<!-- Carrega o script que faz as abas do cardápio funcionarem (fica no fim do <body>
+     para garantir que todo o HTML acima já foi carregado antes do script rodar) -->
 <script src="script.js"></script>
 
 </body>
