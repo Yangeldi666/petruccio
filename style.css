@@ -308,35 +308,27 @@ nav{
    ILUSTRAÇÃO DO HERO
    ============================================================ */
 
-/* Bloco que centraliza a moldura com a imagem da aquarela, logo abaixo dos botões do Hero */
-  .hero-illustration {
+/.hero-illustration {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
-  }
+}
 
-    /* A "moldura" (borda + sombra) ao redor da imagem imagens/aquarela.jpg */
-    .frame {
-        width: 60%;
-        margin: 0 auto;
-        background: var(--paper);
-        border: 1px solid var(--line);
-        padding: 14px;
-        box-shadow: 0 24px 60px -20px rgba(43,40,30,.35);
-    }
+.frame {
+    width: 60%;
+    margin: 0 auto;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 14px;
+    box-shadow: 0 24px 60px -20px rgba(43,40,30,.35);
+    transform: rotate(-.6deg);
+}
 
-.frame img { /* a própria imagem dentro da moldura, sempre ocupando 100% da largura da moldura */
+.frame img {
     display: block;
     width: 100%;
     height: auto;
 }
-  .frame figcaption{ /* legenda abaixo da imagem: "Aquarela por Eliza Fedewicz..." */
-    font-family:'Inter',sans-serif;font-size:.68rem;color:var(--forest);
-    text-align:center;padding-top:10px;letter-spacing:.03em;
-  }
-
-
 
 /* ============================================================
    CONFIGURAÇÃO GERAL DAS SEÇÕES
