@@ -184,6 +184,32 @@
   .sobre-art{
     aspect-ratio:1/1.05;position:relative;
   }
+  /* 1. Garanta que o grid tenha largura total e margem lateral */
+.sobre-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* 2. Force uma largura mínima para evitar o esmagamento das palavras */
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 70px;
+  align-items: center;
+  width: 100%;
+}
+
+/* 3. Evite que hifens ou quebras forçadas estraguem o texto */
+.sobre p {
+  font-size: 1.08rem;
+  color: var(--ink);
+  margin-bottom: 20px;
+  max-width: 52ch;
+  white-space: normal; /* Garante comportamento padrão de quebra */
+  word-break: keep-all; /* Evita quebrar palavras ao meio */
+}
+
 
   /* ============================================================
      CARDÁPIO — seção com abas e as listas de itens/preços
