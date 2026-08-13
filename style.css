@@ -341,6 +341,10 @@ nav{
   height:auto;
   object-fit:contain;
 }
+ .frame figcaption{
+    font-family:'Inter',sans-serif;font-size:.68rem;color:var(--forest);
+    text-align:center;padding-top:10px;letter-spacing:.03em;
+  }
 
 /* ============================================================
    CONFIGURAÇÃO GERAL DAS SEÇÕES
@@ -500,19 +504,7 @@ section{
   height:auto;
 }
 
-.frame-sobre figcaption{
-  font-family:'Inter',sans-serif;
 
-  font-size:.68rem;
-
-  color:var(--forest);
-
-  text-align:left;
-
-  padding-top:10px;
-
-  letter-spacing:.03em;
-}
 
 
 /* ============================================================
