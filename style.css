@@ -182,19 +182,32 @@
     color:var(--forest-dark);margin-top:28px;
   }
   .sobre-art{ /* caixa que contém o desenho */
-    aspect-ratio:1/1.05;position:relative;
-    width: 60%;
-    margin: 0 auto;
-    background: var(--paper);
-    border: 1px solid var(--line);
-    padding: 14px;
-    box-shadow: 0 24px 60px -20px rgba(43,40,30,.35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
     }
 
-  .sobre-art figcaption{ /* legenda abaixo da imagem */
+   .frame-sobre {
+        width: 60%;
+        margin: 0 auto;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        padding: 14px;
+        box-shadow: 0 24px 60px -20px rgba(43,40,30,.35);
+    }
+
+.frame-sobre img { /* a própria imagem dentro da moldura, sempre ocupando 100% da largura da moldura */
+    display: block;
+    width: 100%;
+    height: auto;
+}
+  .frame-sobre figcaption{ /* legenda abaixo da imagem */
     font-family:'Inter',sans-serif;font-size:.68rem;color:var(--forest);
     text-align:center;padding-top:10px;letter-spacing:.03em;
   }
+
+  
   }
 
   /* ============================================================
