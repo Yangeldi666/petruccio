@@ -170,46 +170,92 @@
   }
 
   /* ============================================================
-     SOBRE — seção com texto institucional + ilustração SVG
-     (corresponde à <section class="sobre" id="sobre">)
-     ============================================================ */
-  .sobre{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-  .sobre-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center;} /* 2 colunas: texto (maior) | ilustração (menor) */
-  .sobre p{font-size:1.08rem;color:var(--ink);margin-bottom:20px;max-width:52ch;} /* parágrafos do texto institucional */
-  .sobre p:last-of-type{margin-bottom:0;}
-  .sobre .assinatura{ /* último parágrafo em destaque, itálico: "Petruccio não é só um lugar..." */
-    font-family:'Fraunces',serif;font-style:italic;font-size:1.3rem;
-    color:var(--forest-dark);margin-top:28px;
-  }
-  .sobre-art{
-    aspect-ratio:1/1.05;position:relative;
-  }
-  /* 1. Garanta que o grid tenha largura total e margem lateral */
-.sobre-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 20px;
+   SOBRE
+   Texto institucional + imagem da entrada
+   ============================================================ */
+
+.sobre {
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
-/* 2. Force uma largura mínima para evitar o esmagamento das palavras */
+/* Container principal da seção */
+.sobre-container {
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+/* Duas colunas:
+   esquerda = texto
+   direita = imagem */
 .sobre-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+
+  /* Impede que a imagem "roube" todo o espaço */
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+
   gap: 70px;
   align-items: center;
   width: 100%;
 }
 
-/* 3. Evite que hifens ou quebras forçadas estraguem o texto */
+/* Texto da seção */
 .sobre p {
   font-size: 1.08rem;
+  line-height: 1.7;
   color: var(--ink);
+
   margin-bottom: 20px;
+
+  /* Limita apenas o comprimento da linha */
   max-width: 52ch;
-  white-space: normal; /* Garante comportamento padrão de quebra */
-  word-break: keep-all; /* Evita quebrar palavras ao meio */
+
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
+/* Remove margem do último parágrafo normal */
+.sobre p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Assinatura */
+.sobre .assinatura {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: var(--forest-dark);
+  margin-top: 28px;
+}
+
+/* Área da imagem */
+.sobre-art {
+  width: 100%;
+  position: relative;
+}
+
+/* Imagem */
+.frame-sobre {
+  width: 100%;
+  margin: 0;
+}
+
+.frame-sobre img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.frame-sobre figcaption {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--ink);
+}
 
   /* ============================================================
      CARDÁPIO — seção com abas e as listas de itens/preços
