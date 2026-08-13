@@ -181,10 +181,21 @@
     font-family:'Fraunces',serif;font-style:italic;font-size:1.3rem;
     color:var(--forest-dark);margin-top:28px;
   }
-  .sobre-art{ /* caixa que contém o SVG desenhado à mão (moldura + círculos + "garimpo") */
+  .sobre-art{ /* caixa que contém o desenho */
     aspect-ratio:1/1.05;position:relative;
+    width: 60%;
+    margin: 0 auto;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 14px;
+    box-shadow: 0 24px 60px -20px rgba(43,40,30,.35);
+    }
+
+  .sobre-art figcaption{ /* legenda abaixo da imagem */
+    font-family:'Inter',sans-serif;font-size:.68rem;color:var(--forest);
+    text-align:center;padding-top:10px;letter-spacing:.03em;
   }
-  .sobre-art svg{width:50%;height:50%;}
+  }
 
   /* ============================================================
      CARDÁPIO — seção com abas e as listas de itens/preços
